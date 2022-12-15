@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>PDF Merger</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <meta name="keywords" content="PDF Merger,pdf merger">
+        <meta name="description" content="PDF merger app created using JavaScript">
+        <meta http-equiv="refresh" content="30">
+        <link rel="stylesheet" href="dashboard.css">
+    </head>
+    <body>
+        <section>
+        <header><p>PDF Merger</p></header>
+   
+        <div class="containner">
+            <form action="/merger" method="POST" enctype="multipart/form-data">
+                <label for="file">Select Files : </label><br><br>
+                <input type="file" name="pdfs" autofocus="on" accept="application/pdf" multiple="multiple"><br><br>
+                <input type="submit" value="Merge">
+            </form>
+        </div>
+
+    
+        <footer>&copy;Shusil Limbu</footer>
+       </section>
+     </body>
+</html>
