@@ -4,7 +4,7 @@ const app=new express();
 const path=require('path');
 const multer=require('multer');
 const upload=multer({dest:'uploads/'});
-const Mer=require('./mer.js');
+const Mer=require('./merger.js');
 
  
 const port=process.env.PORT|| 5656;
@@ -25,7 +25,7 @@ app.get('/',(req,res)=>{
 app.post('/merger',upload.array('pdfs',2),async(req,res)=>{
     console.log(req.files[0].path);
     console.log(req.files[1].path);
-    let d=await Mer(path.join(__dirname,req.files[0].path),path.join(__dirname,req.files[1].path));
+    let d=await Mer(path.join(__dirname,req.files[0].path),path.join(__dirname,req.files[1].path),req.body.num1,req.body.num2);
     res.redirect(`http://localhost:5656/static/${d}.pdf`);
 
 }); 
