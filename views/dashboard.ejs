@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <meta name="keywords" content="PDF Merger,pdf merger">
         <meta name="description" content="PDF merger app created using JavaScript">
-        <meta http-equiv="refresh" content="30">
+        <meta http-equiv="refresh" content="60">
         <link rel="stylesheet" href="dashboard.css">
     </head>
     <body>
@@ -13,9 +13,21 @@
         <header><p>PDF Merger</p></header>
    
         <div class="containner">
+            
             <form action="/merger" method="POST" enctype="multipart/form-data">
+                <p class="wlc" ><%= error %></p>
                 <label for="file">Select Files : </label><br><br>
-                <input type="file" name="pdfs" autofocus="on" accept="application/pdf" multiple="multiple"><br><br>
+                <input type="file" name="pdfs" autofocus="on" accept="application/pdf" multiple="multiple"><br><br><br>
+
+                <label>First PDF's Page No. : </label>
+                <input type="text" name="Fnum1" autofocus="on" autocomplete="off"> <span>to</span>   
+                <input type="text" name="Fnum2" autofocus="on" autocomplete="off"> <br><br>
+                
+
+                <label>Second PDF's Page No. : </label>
+                <input type="text" name="Snum1" autofocus="on" autocomplete="off"> <span>to</span>   
+                <input type="text" name="Snum2" autofocus="on" autocomplete="off"> <br><br>
+
                 <input type="submit" value="Merge">
             </form>
         </div>
